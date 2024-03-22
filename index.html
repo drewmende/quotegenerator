@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirational Quotes</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZwT"
+          crossorigin="anonymous">
+
+    <!-- Include your custom CSS -->
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #quote-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        #quote {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #343a40; /* Darker color on hover */
+        }
+
+        #banner-ad, #support {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Inspirational Quotes</h1>
+    </header>
+
+    <main class="container mt-4">
+        <section id="quote-container">
+            <p id="quote">Loading...</p>
+            <button id="random-quote-button" class="btn btn-dark" onclick="generateRandomQuote()">Generate Random Quote</button>
+        </section>
+
+        <section id="banner-ad">
+            <!-- Placeholder for banner ad -->
+            <p class="text-center">Banner Ad Here</p>
+        </section>
+
+        <section id="support">
+            <p class="lead text-center">If you find this app helpful, consider supporting it:</p>
+            <!-- Include the Buy Me a Coffee button -->
+            <div class="text-center">
+                <a href="https://www.buymeacoffee.com/the1grav" target="_blank">
+                    <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=yourusername&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS and Popper.js CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+            crossorigin="anonymous"></script>
+
+    <!-- Include your JavaScript file -->
+    <script>
+        const quotes = [
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "Believe you can and you're halfway there. - Theodore Roosevelt",
+            "Strive not to be a success, but rather to be of value. - Albert Einstein",
+            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+            "It always seems impossible until it's done. - Nelson Mandela",
+            "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+            "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+            "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+            "Every moment is a fresh beginning. - T.S. Eliot",
+            // ... (add the rest of your quotes here)
+// ... (your existing quotes)
+
+// Additional quotes
+"Success is not just about making money. It's about making a difference. - Unknown",
+"The only impossible journey is the one you never begin. - Tony Robbins",
+"Do not wait to strike till the iron is hot, but make it hot by striking. - William Butler Yeats",
+"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. - Steve Jobs",
+"The best way to predict the future is to invent it. - Alan Kay",
+"The only thing standing between you and your goal is the story you keep telling yourself. - Jordan Belfort",
+"Success is not in what you have, but who you are. - Bo Bennett",
+"Believe you can and you're halfway there. - Theodore Roosevelt",
+"Strive not to be a success, but rather to be of value. - Albert Einstein",
+"The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+"It's not about ideas. It's about making ideas happen. - Scott Belsky",
+"Challenges are what make life interesting. Overcoming them is what makes life meaningful. - Joshua J. Marine",
+"If you want to achieve greatness, stop asking for permission. - Anonymous",
+"Success is walking from failure to failure with no loss of enthusiasm. - Winston Churchill",
+"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle. - Christian D. Larson",
+"The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+"It always seems impossible until it's done. - Nelson Mandela",
+"Life is 10% what happens to us and 90% how we react to it. - Charles R. Swindoll",
+"The only journey is the one within. - Rainer Maria Rilke",
+"Do not wait for leaders; do it alone, person to person. - Mother Teresa",
+"Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+"Every moment is a fresh beginning. - T.S. Eliot",
+"The purpose of our lives is to be happy. - Dalai Lama",
+"The best way to predict the future is to create it. - Peter Drucker",
+"Happiness is not something ready-made. It comes from your own actions. - Dalai Lama",
+"Be kind whenever possible. It is always possible. - Dalai Lama",
+"In the middle of every difficulty lies opportunity. - Albert Einstein",
+"Your attitude, not your aptitude, will determine your altitude. - Zig Ziglar",
+"Life is what happens when you're busy making other plans. - Allen Sanders",
+"The way to get started is to quit talking and begin doing. - Walt Disney",
+"The secret of getting ahead is getting started. - Mark Twain",
+"The best revenge is massive success. - Frank Sinatra",
+"Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
+"Strive not to be a success, but rather to be of value. - Albert Einstein",
+"The only way to do great work is to love what you do. - Steve Jobs",
+"Life is what happens when you're busy making other plans. - Allen Sanders",
+"Do not wait for leaders; do it alone, person to person. - Mother Teresa",
+"The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+"The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+"The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
+"The only impossible journey is the one you never begin. - Tony Robbins",
+"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle. - Christian D. Larson",
+"Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+"The only thing standing between you and your goal is the story you keep telling yourself. - Jordan Belfort",
+"The best way to predict the future is to invent it. - Alan Kay",
+"If you want to achieve greatness stop asking for permission. - Anonymous",
+"Success is not just about making money. It's about making a difference. - Unknown",
+"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. - Steve Jobs",
+"It's not about ideas. It's about making ideas happen. - Scott Belsky",
+"Challenges are what make life interesting. Overcoming them is what makes life meaningful. - Joshua J. Marine",
+"If you want to achieve greatness, stop asking for permission. - Anonymous",
+// Additional quotes
+"Believe in the magic within you.",
+"The journey of a thousand miles begins with a single step. - Lao Tzu",
+"Do more things that make you forget to check your phone.",
+"The only way to do great work is to love what you do. - Steve Jobs",
+"Your vibe attracts your tribe.",
+"Every morning brings new potential, but only if you make the most of it.",
+"Be a voice, not an echo.",
+"Embrace the glorious mess that you are.",
+"Life is short, smile while you still have teeth.",
+"Do small things with great love. - Mother Teresa",
+"Chase your stars, fool. Life is short.",
+"Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+"Good things come to those who hustle.",
+"Live each day as if your life had just begun. - Johann Wolfgang Von Goethe",
+"Sometimes the right path is not the easiest one. - Grandmother Willow, Pocahontas",
+"Dream big. Sparkle more. Shine bright.",
+"Your only limit is your mind.",
+"Do what you love, love what you do.",
+"Believe you can and you're halfway there. - Theodore Roosevelt",
+"The secret of getting ahead is getting started. - Mark Twain",
+"If you want to achieve greatness, stop asking for permission. - Anonymous",
+"The best way to predict the future is to create it. - Peter Drucker",
+"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle. - Christian D. Larson",
+"Success is not just about making money. It's about making a difference. - Unknown",
+"The only impossible journey is the one you never begin. - Tony Robbins",
+"Do not wait to strike till the iron is hot, but make it hot by striking. - William Butler Yeats",
+"The purpose of our lives is to be happy. - Dalai Lama",
+"In the middle of every difficulty lies opportunity. - Albert Einstein",
+"Your attitude, not your aptitude, will determine your altitude. - Zig Ziglar",
+"Life is what happens when you're busy making other plans. - Allen Sanders",
+"The way to get started is to quit talking and begin doing. - Walt Disney",
+"The best revenge is massive success. - Frank Sinatra",
+"Strive not to be a success, but rather to be of value. - Albert Einstein",
+"The only way to do great work is to love what you do. - Steve Jobs",
+"Life is what happens when you're busy making other plans. - Allen Sanders",
+"Do not wait for leaders; do it alone, person to person. - Mother Teresa",
+"The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+"The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+"The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
+"The only impossible journey is the one you never begin. - Tony Robbins",
+"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle. - Christian D. Larson",
+"Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+"The only thing standing between you and your goal is the story you keep telling yourself. - Jordan Belfort",
+"The best way to predict the future is to invent it. - Alan Kay",
+"If you want to achieve greatness stop asking for permission. - Anonymous",
+"Success is not just about making money. It's about making a difference. - Unknown",
+"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. - Steve Jobs",
+"It's not about ideas. It's about making ideas happen. - Scott Belsky",
+"Challenges are what make life interesting. Overcoming them is what makes life meaningful. - Joshua J. Marine",
+"If you want to achieve greatness, stop asking for permission. - Anonymous"
+
+
+
+
+        ];
+
+        const holidayQuotes = {
+            "01-01": [
+                "Cheers to a new year and another chance for us to get it right. - Oprah Winfrey",
+                "Write it on your heart that every day is the best day in the year. - Ralph Waldo Emerson",
+                "The beginning is the most important part of the work. - Plato",
+                "A journey of a thousand miles begins with a single step. - Lao Tzu",
+                "Success is not in what you have, but who you are. - Bo Bennett",
+                "The secret of getting ahead is getting started. - Mark Twain",
+                "In every walk with nature one receives far more than he seeks. - John Muir",
+            ],
+            // ... (add more holidays and quotes as needed)
+        };
+
+        function generateRandomQuote() {
+            const today = new Date();
+            const formattedDate = (today.getMonth() + 1).toString().padStart(2, '0') + "-" + 
+                                today.getDate().toString().padStart(2, '0');
+            
+            const quoteElement = document.getElementById("quote");
+            
+            if (formattedDate in holidayQuotes) {
+                const randomIndex = Math.floor(Math.random() * holidayQuotes[formattedDate].length);
+                quoteElement.textContent = holidayQuotes[formattedDate][randomIndex];
+            } else {
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                quoteElement.textContent = quotes[randomIndex];
+            }
+        }
+
+        // Initial quote display
+        generateRandomQuote();
+
+        // Add event listener to the "Generate Random Quote" button
+        document.getElementById("random-quote-button").addEventListener("click", generateRandomQuote);
+    </script>
+</body>
+</html>
