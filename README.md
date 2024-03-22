@@ -44,7 +44,6 @@ Contributions are welcome! If you'd like to contribute to this project, you can:
 - Suggest new features
 - Submit pull requests
 
-Please refer to the [contribution guidelines](CONTRIBUTING.md) for more details.
 
 ## License
 
