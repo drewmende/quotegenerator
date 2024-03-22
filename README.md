@@ -34,7 +34,7 @@ To use the Inspirational Quotes Generator:
 
 ## Support
 
-If you encounter any issues or have any questions or suggestions, feel free to [open an issue](https://github.com/yourusername/inspirational-quotes-generator/issues). You can also reach out to me via email at [youremail@example.com](mailto:youremail@example.com).
+If you encounter any issues or have any questions or suggestions, feel free to [open an issue](https://github.com/drewmende/inspirational-quotes-generator/issues). You can also reach out to me via email at [drewmende96@gmail.com](mailto:drewmende96@gmail.com).
 
 ## Contributing
 
