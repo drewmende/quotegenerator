@@ -2,7 +2,9 @@
 A Random Inspirational Quote Generator with a Donation Button embedded
 # Inspirational Quotes Generator
 
-Welcome to the Inspirational Quotes Generator repository! This project is a simple web application that generates random inspirational quotes. You can use it to get inspired, motivated, or just to add a positive touch to your day.
+Welcome to the Inspirational Quotes Generator repository! This project is a simple web application that generates random inspirational quotes. You can use it to get inspired, motivated, or just to add a positive touch to your day. 
+[Visit the deployed site](https://gravquotes.netlify.app)
+
 
 ## Table of Contents
 - [Introduction](#introduction)
